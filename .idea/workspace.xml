@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5543795c-f46b-44e1-ada5-790949d0023f" name="Changes" comment="Implementação com pequeno teste de funcionalidades" />
+    <list default="true" id="5543795c-f46b-44e1-ada5-790949d0023f" name="Changes" comment="Implementação com pequeno teste de funcionalidades">
+      <change afterPath="$PROJECT_DIR$/src/carros/Carro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/builders/CarroBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diretor/CarroBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carros/CarroEsportivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carros/CarroEsportivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carros/CarroSedan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/carros/CarroSedan.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

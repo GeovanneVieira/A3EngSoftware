@@ -3,7 +3,7 @@ package carros;
 import motores.Motor;
 import motores.MotorEsportivo;
 
-public class CarroEsportivo implements Prototype, Builder {
+public class CarroEsportivo extends Carro implements Prototype, Builder {
     private MotorEsportivo motor;
     private String corExterior = "Vermelho";
     private String corInterior = "Branco";
@@ -16,7 +16,8 @@ public class CarroEsportivo implements Prototype, Builder {
     }
 
 
-    // Trecho do código que permite a clonagem no Prototype
+    // Trecho do código que permite a clonagem dos atributos do objeto e implementa o método da Interface Prototype
+
     private CarroEsportivo(CarroEsportivo modelo) {
         this.motor = modelo.motor;
         this.corExterior = modelo.corExterior;
@@ -27,7 +28,13 @@ public class CarroEsportivo implements Prototype, Builder {
         this.valor = modelo.valor;
     }
 
-    // Trecho que implementa a Interface Builder e permite que a classe CarroBuilder altere os atributos
+    public Prototype clone() {
+        return new CarroEsportivo(this);
+    }
+
+    // Trecho que implementa os métodos da Interface Builder
+    // e permite que a classe CarroBuilder defina os atributos do objeto
+
     public void definirMotor(Motor motor) {
         this.motor = (MotorEsportivo) motor;
     }
@@ -57,20 +64,26 @@ public class CarroEsportivo implements Prototype, Builder {
     public void definirNumAssentos(int numAssentos) {
         this.numAssentos = numAssentos;
     }
+
+    public double getValor() {
+        return valor;
+    }
     @Override
     public String toString() {
+        String possuiAssistencia;
+        if (sistemaDeAssistencia) {
+            possuiAssistencia = "Está equipado com o sistema de assistência";
+        } else {
+            possuiAssistencia = "Não está equipado com o sistema de assistência";
+        }
+
         return "Carro Esportivo" +
                 "\nMotor: " + motor.getTipoMotor() + " com " + motor.getCavalosPotencia() + " cavalos de potência" +
                 "\nCor Exterior: " + corExterior +
                 "\nCor Interior: " + corInterior +
-                "\nSistema de assistência: " + sistemaDeAssistencia +
+                "\nSistema de assistência: " + possuiAssistencia +
                 "\nNúmero de portas: " + numPortas +
                 "\nNúmero de assentos: " + numAssentos +
                 "\nValor: R$" + valor;
-    }
-
-    // Implementação da Interface de Prototype
-    public Prototype clone() {
-        return new CarroEsportivo(this);
     }
 }
